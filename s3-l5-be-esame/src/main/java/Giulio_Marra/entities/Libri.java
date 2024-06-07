@@ -38,4 +38,16 @@ public class Libri extends Contenuti {
     public void setGenere(Genere genere) {
         this.genere = genere;
     }
+
+    @Override
+    public String toString() {
+        return "Libri{" +
+                "autore='" + autore + '\'' +
+                ", genere=" + genere +
+                ", isbn=" + isbn +
+                ", titolo='" + titolo + '\'' +
+                ", anno_pubblicazione=" + anno_pubblicazione +
+                ", numero_pagine=" + numero_pagine +
+                '}';
+    }
 }

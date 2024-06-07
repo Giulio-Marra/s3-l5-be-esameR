@@ -28,4 +28,15 @@ public class Riviste extends Contenuti {
     public void setPeriodicita(Periodicita periodicita) {
         this.periodicita = periodicita;
     }
+
+    @Override
+    public String toString() {
+        return "Riviste{" +
+                "periodicita=" + periodicita +
+                ", isbn=" + isbn +
+                ", titolo='" + titolo + '\'' +
+                ", anno_pubblicazione=" + anno_pubblicazione +
+                ", numero_pagine=" + numero_pagine +
+                '}';
+    }
 }

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>Giulio_Marra</groupId>
-    <artifactId>s3-l4-be</artifactId>
+    <artifactId>s3-l5-be-esame</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

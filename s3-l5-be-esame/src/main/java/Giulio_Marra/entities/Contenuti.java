@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "contenuti_type", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "contenuti")
 public abstract class Contenuti {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +13,9 @@ public abstract class Contenuti {
     protected String titolo;
     protected int anno_pubblicazione;
     protected int numero_pagine;
+
+    @OneToOne(mappedBy = "contenuto")
+    protected Prestito prestito;
 
     public Contenuti() {
     }
@@ -23,7 +26,7 @@ public abstract class Contenuti {
         this.numero_pagine = numero_pagine;
     }
 
-    // Getters and Setters
+
     public long getIsbn() {
         return isbn;
     }

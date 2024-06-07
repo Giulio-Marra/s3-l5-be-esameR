@@ -1,21 +1,23 @@
 package Giulio_Marra.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Utente {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String nome;
     private String cognome;
     private LocalDate data_di_nascita;
     private int numero_tessera;
+
+    @OneToMany(mappedBy = "utente")
+    private List<Prestito> prestiti;
 
     public Utente() {
 
@@ -28,8 +30,8 @@ public class Utente {
         this.numero_tessera = numero_tessera;
     }
 
-    public long getId() {
-        return id;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -62,6 +64,14 @@ public class Utente {
 
     public void setNumero_tessera(int numero_tessera) {
         this.numero_tessera = numero_tessera;
+    }
+
+    public List<Prestito> getPrestiti() {
+        return prestiti;
+    }
+
+    public void setPrestiti(List<Prestito> prestiti) {
+        this.prestiti = prestiti;
     }
 
     @Override
