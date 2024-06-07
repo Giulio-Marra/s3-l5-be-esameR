@@ -2,6 +2,8 @@ package Giulio_Marra.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "contenuti")
@@ -14,8 +16,8 @@ public abstract class Contenuti {
     protected int anno_pubblicazione;
     protected int numero_pagine;
 
-    @OneToOne(mappedBy = "contenuto")
-    protected Prestito prestito;
+    @OneToMany(mappedBy = "contenuto")
+    private List<Prestito> prestiti;
 
     public Contenuti() {
     }
@@ -25,7 +27,6 @@ public abstract class Contenuti {
         this.anno_pubblicazione = anno_pubblicazione;
         this.numero_pagine = numero_pagine;
     }
-
 
     public long getIsbn() {
         return isbn;
@@ -53,5 +54,13 @@ public abstract class Contenuti {
 
     public void setNumero_pagine(int numero_pagine) {
         this.numero_pagine = numero_pagine;
+    }
+
+    public List<Prestito> getPrestiti() {
+        return prestiti;
+    }
+
+    public void setPrestiti(List<Prestito> prestiti) {
+        this.prestiti = prestiti;
     }
 }

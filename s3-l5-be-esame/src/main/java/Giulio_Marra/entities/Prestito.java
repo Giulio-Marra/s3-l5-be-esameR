@@ -7,14 +7,14 @@ import java.time.LocalDate;
 @Entity
 public class Prestito {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne
     @JoinColumn(name = "utente_id")
     private Utente utente;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "contenuto_isbn")
     private Contenuti contenuto;
 

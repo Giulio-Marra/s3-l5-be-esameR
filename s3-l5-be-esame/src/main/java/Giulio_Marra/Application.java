@@ -3,7 +3,6 @@ package Giulio_Marra;
 import Giulio_Marra.dao.ArchivioDAO;
 import Giulio_Marra.dao.PrestitoDAO;
 import Giulio_Marra.dao.UtenteDAO;
-import Giulio_Marra.entities.Contenuti;
 import Giulio_Marra.entities.Libri;
 import Giulio_Marra.entities.Riviste;
 import Giulio_Marra.entities.Utente;
@@ -36,14 +35,19 @@ public class Application {
         Utente mario = new Utente("Mario", "Rossi", LocalDate.of(1990, 10, 15), 4498);
         Utente alessandro = new Utente("Alessandro", "Borlotti", LocalDate.of(1987, 12, 21), 9872);
 
-        //archivioDAO.aggiungiContenuto(darknebula); METODO PER AGGUNGERE UN CONTENUTO
-
+        /*archivioDAO.aggiungiContenuto(darknebula);
+        archivioDAO.aggiungiContenuto(fahrenheit);
+        archivioDAO.aggiungiContenuto(guidagalattica);
+        archivioDAO.aggiungiContenuto(cucina);
+        archivioDAO.aggiungiContenuto(focus);
+        archivioDAO.aggiungiContenuto(game);
 
         utenteDAO.saveUtente(giulio);
         utenteDAO.saveUtente(mario);
-        utenteDAO.saveUtente(alessandro);
+        utenteDAO.saveUtente(alessandro);*/
 
-        Utente utente1 = utenteDAO.getetUtente(1);
+
+        /*Utente utente1 = utenteDAO.getetUtente(1);
         Utente utente2 = utenteDAO.getetUtente(2);
         Utente utente3 = utenteDAO.getetUtente(3);
 
@@ -54,9 +58,27 @@ public class Application {
         Contenuti contenuto5 = archivioDAO.getContenuti(5);
         Contenuti contenuto6 = archivioDAO.getContenuti(6);
 
-        //Prestito prestito1 = new Prestito(utente1, contenuto1, LocalDate.of(2024, 01, 10), LocalDate.of(2025, 02, 10), LocalDate.of(2025, 02, 10));
-        //prestitoDAO.savePrestito(prestito1);
+        Prestito prestito1 = new Prestito(utente1, contenuto1, LocalDate.of(2024, 12, 02), LocalDate.of(2024, 12, 10));
+        Prestito prestito2 = new Prestito(utente1, contenuto2, LocalDate.of(2024, 11, 10), LocalDate.of(2024, 12, 11));
+        Prestito prestito3 = new Prestito(utente2, contenuto4, LocalDate.of(2024, 8, 10), LocalDate.of(2024, 10, 20));
+        Prestito prestito4 = new Prestito(utente1, contenuto3, LocalDate.of(2024, 11, 11), LocalDate.of(2024, 12, 7));
+        Prestito prestito5 = new Prestito(utente3, contenuto2, LocalDate.of(2024, 10, 15), LocalDate.of(2024, 12, 2));
+        Prestito prestito6 = new Prestito(utente2, contenuto3, LocalDate.of(2024, 2, 22), LocalDate.of(2024, 2, 24));
+        Prestito prestito7 = new Prestito(utente2, contenuto4, LocalDate.of(2024, 10, 10), LocalDate.of(2024, 11, 1));
+        Prestito prestito8 = new Prestito(utente1, contenuto5, LocalDate.of(2024, 5, 1), LocalDate.of(2024, 6, 8));
+        Prestito prestito9 = new Prestito(utente3, contenuto3, LocalDate.of(2024, 6, 2), LocalDate.of(2024, 7, 9));
+        Prestito prestito10 = new Prestito(utente2, contenuto6, LocalDate.of(2024, 3, 7), LocalDate.of(2024, 5, 16));
 
+        prestitoDAO.savePrestito(prestito1);
+        prestitoDAO.savePrestito(prestito2);
+        prestitoDAO.savePrestito(prestito3);
+        prestitoDAO.savePrestito(prestito4);
+        prestitoDAO.savePrestito(prestito5);
+        prestitoDAO.savePrestito(prestito6);
+        prestitoDAO.savePrestito(prestito7);
+        prestitoDAO.savePrestito(prestito8);
+        prestitoDAO.savePrestito(prestito9);
+        prestitoDAO.savePrestito(prestito10);*/
 
         System.out.println("Hello World!");
 
