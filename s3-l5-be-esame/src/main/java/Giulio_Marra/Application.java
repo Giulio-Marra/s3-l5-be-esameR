@@ -81,6 +81,12 @@ public class Application {
         prestitoDAO.savePrestito(prestito10);*/
 
         System.out.println("Hello World!");
+        //METODO PER CERCARE TRAMITE ISBN, NON HO SALDATO IL DATO MA FATTO UN LOG PER COMODITA
+        System.out.println(archivioDAO.getContenuti(1));
+        //METOTO PER CERCARE IL CONTENUTO PER ANNO PUBBLICAZIONE
+        System.out.println(archivioDAO.getContenutiPerAnno(1953));
+        //METODO PER CERCARE IL CONTENUTO PER AUTORE
+        System.out.println(archivioDAO.getContenutiPerAUtore("Douglas Adams"));
 
         em.close();
         emf.close();
