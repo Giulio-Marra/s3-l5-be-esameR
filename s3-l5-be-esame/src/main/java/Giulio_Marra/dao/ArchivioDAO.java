@@ -39,5 +39,19 @@ public class ArchivioDAO {
         return query.getResultList();
     }
 
+    public List<Contenuti> getContenutiPerTitolo(String titolo) {
+        TypedQuery<Contenuti> query = em.createQuery("SELECT c FROM Contenuti c WHERE c.titolo LIKE :titolo", Contenuti.class);
+        query.setParameter("titolo", "%" + titolo + "%");
+        return query.getResultList();
+    }
+
+    public List<Contenuti> getContenutiAttualmenteInPrestito(long codiceUtente) {
+        TypedQuery<Contenuti> query = em.createQuery(
+                "SELECT p.contenuto FROM Prestito p WHERE p.utente.numero_tessera = :codiceUtente AND p.data_restituzione IS NULL",
+                Contenuti.class
+        );
+        query.setParameter("codiceUtente", codiceUtente);
+        return query.getResultList();
+    }
 
 }

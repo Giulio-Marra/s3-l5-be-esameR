@@ -26,6 +26,7 @@ public class Application {
         Libri darknebula = new Libri("Dark Nebula", 1973, 206, "Brian Stableford", Genere.FANTASY);
         Libri fahrenheit = new Libri("Fahrenheit 451", 1953, 160, "Ray Bradbury", Genere.HORROR);
         Libri guidagalattica = new Libri("Guida Galattica per autostoppisti", 1980, 230, "Douglas Adams", Genere.FANTASCIENZA);
+        Libri librocasuale = new Libri("librocasuale", 2000, 220, "Signor Nessuno", Genere.FANTASCIENZA);
 
         Riviste cucina = new Riviste("Cucina Ayurveda", 2024, 321, Periodicita.MENSILE);
         Riviste focus = new Riviste("Focus Scienza", 2019, 201, Periodicita.SEMESTRALE);
@@ -41,6 +42,7 @@ public class Application {
         archivioDAO.aggiungiContenuto(cucina);
         archivioDAO.aggiungiContenuto(focus);
         archivioDAO.aggiungiContenuto(game);
+
 
         utenteDAO.saveUtente(giulio);
         utenteDAO.saveUtente(mario);
@@ -80,6 +82,7 @@ public class Application {
         prestitoDAO.savePrestito(prestito9);
         prestitoDAO.savePrestito(prestito10);*/
 
+
         System.out.println("Hello World!");
         //METODO PER CERCARE TRAMITE ISBN, NON HO SALDATO IL DATO MA FATTO UN LOG PER COMODITA
         System.out.println(archivioDAO.getContenuti(1));
@@ -87,6 +90,10 @@ public class Application {
         System.out.println(archivioDAO.getContenutiPerAnno(1953));
         //METODO PER CERCARE IL CONTENUTO PER AUTORE
         System.out.println(archivioDAO.getContenutiPerAUtore("Douglas Adams"));
+        //METOTO PER CERCARE PER TIUTOLO O PARTE DEL TITOLO
+        System.out.println(archivioDAO.getContenutiPerTitolo("ienza"));
+        //
+        System.out.println(archivioDAO.getContenutiAttualmenteInPrestito(4498));
 
         em.close();
         emf.close();
